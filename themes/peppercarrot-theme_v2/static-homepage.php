@@ -146,6 +146,36 @@ $lang = $plxShow->defaultLang($echo);
         </div>
       </section>
 
+      <?php # ===========  Framagit feed box ================ ?>
+      <section class="col sml-12 med-4 lrg-4">
+        <div class="homebox news">
+          <h2>Git <?php $plxShow->lang('SOURCES') ?></h2>
+          <div>
+          <?php 
+          $feed_url = "https://framagit.org/peppercarrot.atom"; 
+          $content = file_get_contents($feed_url);
+          $x = new SimpleXmlElement($content);
+           
+          echo "<ul>";
+           
+          foreach($x->entry as $item) {
+          $published_on = $item->updated;
+          $published_on = strftime("%Y-%m-%d", strtotime($published_on));
+          $link = $item->link;
+          $title = $item->title;
+          $content = $item->summary;
+              echo "<li>" . $published_on . " : <a href=" . $link . " title=" . $title . "><b>" . $title . "</b></a><br/>" . $content . "</li>";
+          }
+          echo "</ul>";
+          ?>
+          <div style="clear:both;"></div>
+            <div class="moreposts" style="margin-top: 0.3rem;">
+              <a  class="button blue" href="<?php $plxShow->urlRewrite('?static10/fanart-gallery') ?>" title="Go to the blog page">
+                <?php $plxShow->lang('HOMEPAGE_MOREPOSTS_BUTTON') ?> (<?php $plxShow->lang('HOMEPAGE_FANART') ?>) &nbsp;&nbsp;<img class="svg" src="themes/peppercarrot-theme_v2/ico/go.svg" alt="→"/>
+              </a>
+          </div>
+        </div>
+      </section>
 
 	</main>
           <?php include(dirname(__FILE__).'/share-static.php'); ?>  <br/>
