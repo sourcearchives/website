@@ -93,6 +93,17 @@ You can use your browser now and visit http://localhost/
 To connect to the admin visit http://localhost/core/admin/auth.php : login **admin**, password **password**.
 Enjoy!
 
+### Using docker image
+
+A docker image can be used for testing purpose
+
+```
+docker build . -t peppercarrot-website:test
+# Note: you can change 8080 to the port you wish
+docker run -it --rm -p 8080:80 peppercarrot-website:test
+firefox http://localhost:8080
+```
+
 ## Contribution
 
 I'm open to any type of enhancement! Better code, cleaner code identation, code comment, new features, bug fixes, update to newer version, security test, etc... You can also find a TODO.md text at the root with my various idea. Do not hesitate to open a bug report ticket to just talk about something if you are not sure. The credit for the contributors of the website will be written on the [Author](https://www.peppercarrot.com/en/static7/author) page. (edited via **AUTHORS.md** in the peppercarrot/webcomics repository).
