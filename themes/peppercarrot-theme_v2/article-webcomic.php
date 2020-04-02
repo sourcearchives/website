@@ -76,9 +76,9 @@ class NavigationToggleButton {
         <div class="col sml-12 sml-text-right">
           <nav class="nav" role="navigation">
             <div class="responsive-langmenu">
-              <!-- Dictionary button. TODO This does not work when transcript was switched on via navigation rather than via button -->
+              <!-- Button for opening this page in http://multidict.net/wordlink/ -->
               <div class="button top moka">
-                <a href="https://multidict.net/wordlink/?sl=en&url=referer" title="<?php print($plxShow->Getlang('NAVIGATION_DICTIONARY_ALT')); ?>" class="lang option" target="_blank"><?php print($plxShow->Getlang('NAVIGATION_DICTIONARY')); ?></a>
+                <a href="https://multidict.net/wordlink/?sl=en&url=<?php print($plxShow->artUrl().urlencode('?&transcript=1')); ?>" title="<?php print($plxShow->Getlang('NAVIGATION_DICTIONARY_ALT')); ?>" class="lang option" target="_blank"><?php print($plxShow->Getlang('NAVIGATION_DICTIONARY')); ?></a>
               </div>
               <?php
               $transcriptButton = new NavigationToggleButton($plxShow->Getlang('NAVIGATION_TRANSCRIPT'), 'transcript', 'SessionTranscript', $plxShow->Getlang('NAVIGATION_TRANSCRIPT_ON'), $plxShow->Getlang('NAVIGATION_TRANSCRIPT_OFF'));
