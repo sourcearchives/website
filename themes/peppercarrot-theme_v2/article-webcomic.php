@@ -4,63 +4,38 @@
  * An Option Button to show below the main page navigator
  */
 class NavigationToggleButton {
-  private $css;
-  private $link;
   private $title;
   private $status;
-
-# TODO plugins/plxMyMultiLingue/plxMyMultiLingue.php:
-# plugins/cache.php:
-
-# TODO make the 2 buttons show each other's options
+  private $varname;
 
   /**
    * Construct a button.
    *
-   * @param string  $title           Button title to display to user
+   * @param string  $title       Button title to display to user
    *
-   * @param string  $varname         Variable name to add to URL, format '&varname=on'
+   * @param string  $varname     Variable name to add to URL, format '&varname=on'
    *
-   * @param string  $onname          Value to use for switching the option on,
-   *                                 format '&varname=onname'
-   *
-   * @param string  $offname         Value to use for switching the option off,
-   *                                 format '&varname=offname'
-   *
-   * @param string  $sessionvar      Name of the $_SESSION entry to remember the option
-   *
-   * @param string  $sessiononname   Value for sessionvar when option is on
-   *
-   * @param string  $sessionoffname  Value for sessionvar when option is off
+   * @param string  $sessionvar  Name of the $_SESSION entry to remember the option
    *
    * @return void
    */
-  function __construct($title, $varname, $onname, $offname, $sessionvar, $sessiononname, $sessionoffname) {
+  function __construct($title, $varname, $sessionvar) {
     global $_GET, $_SESSION;
 
     $this->title = $title;
+    $this->varname = $varname;
 
-    # Have we got a new variable 'varname' in URL ? grab and security fix it.
-    $this->status = htmlspecialchars($_GET[$varname]);
-    $this->status = preg_replace('/[^A-Za-z0-9\._-]/', '', $this->status);
+    # Have we got a new variable 'varname' in URL? Grab it as boolean.
+    $this->status = isset($_GET[$varname]) && $_GET[$varname] === '1';
 
-    if ($this->status == $onname) {
-      $this->css = '';
-      $this->link = '&' . $varname . '=' . $offname;
-    } elseif ($this->status == $offname) {
-      $this->css = 'moka';
-      $this->link = '&' . $varname . '=' . $onname;
-      $_SESSION[$sessionvar] = $sessionoffname;
-
-    } else {
-      $this->css = 'moka';
-      $this->link = '&' . $varname . '=' . $onname;
+    # Remember in session if we switched it off explicitly just now
+    if (!$this->status && isset($_GET[$varname])) {
+      $_SESSION[$sessionvar] = 0;
     }
 
     # Have we got a preference in memory from previous page?
-    if ($_SESSION[$sessionvar] == $sessiononname) {
-      $this->css = '';
-      $this->link = '&' . $varname . '=' . $offname;
+    if ($_SESSION[$sessionvar]) {
+      $this->status = true;
     }
   }
 
@@ -69,15 +44,16 @@ class NavigationToggleButton {
    */
   function printHtml() {
     global $plxShow;
+    $link = $this->varname . '=' . ($this->status ? '0' : '1');
     ?>
-    <div class="button top <?php echo ''.$this->css.''; ?>">
-      <a href="<?php $plxShow->artUrl(); echo ''.$this->link.''; ?>" class="lang option"><?php echo ''.$this->title.''; ?></a>
+    <div class="button top <?php print($this->status ? '' : 'moka'); ?>">
+      <a href="<?php $plxShow->artUrl(); print('&'.$link); ?>" class="lang option"><?php echo ''.$this->title.''; ?></a>
     </div>
     <?php
   }
 
   /**
-   * @return  the button's status as parsed in the constructor from $_GET[$varname]
+   * @return  boolean  the button's status as parsed in the constructor from $_GET[$varname]
    */
   function status() {
     return $this->status;
@@ -94,9 +70,10 @@ class NavigationToggleButton {
           <nav class="nav" role="navigation">
             <div class="responsive-langmenu">
               <?php
-              $hdButton = new NavigationToggleButton('HD 2400px', 'option', 'hd', 'low', 'SessionMemory', 'KeepHD', 'RemoveHD');
+              $transcriptButton = new NavigationToggleButton('Transcript', 'transcript', 'SessionTranscript');
+              $transcriptButton->printHtml();
+              $hdButton = new NavigationToggleButton('HD 2400px', 'hd', 'SessionHD');
               $hdButton->printHtml();
-              (new NavigationToggleButton('Transcript', 'transcript', 'on', 'off', 'TranscriptMemory', 'on', 'off'))->printHtml();
               ?>
               <label for="langmenu" style="display: inline-block;"><span class="translabutton"><img src="themes/peppercarrot-theme_v2/ico/language.svg" alt=""/> <?php echo $langlabel;?><img src="themes/peppercarrot-theme_v2/ico/dropdown.svg" alt=""/></span></label>
               <input type="checkbox" id="langmenu">
@@ -120,7 +97,9 @@ class NavigationToggleButton {
         ?>
 
         <section class="text-center">
-          <?php eval($plxShow->callHook("MyMultiLingueComicDisplay", array(''.$hdButton->status().''))) ?>
+          <?php eval($plxShow->callHook("MyMultiLingueComicDisplay",
+                                        array('hd' => $hdButton->status(),
+                                              'transcript' => $transcriptButton->status()))) ?>
         </section>
 
       </article>
