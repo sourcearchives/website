@@ -30,6 +30,16 @@ $LANG = array(
 'ESHOP'        =>   'eBoutique',
 'FOLLOW'        =>  'Heulia&ntilde; Pepper&amp;Carrot war :',
 
+# Top menu website buttons:
+'NAVIGATION_TRANSCRIPT' => 'Transcript',
+'NAVIGATION_TRANSCRIPT_ON' => 'Click to show transcript',
+'NAVIGATION_TRANSCRIPT_OFF' => 'Click to hide transcript',
+'NAVIGATION_HD' => 'HD 2400px',
+'NAVIGATION_HD_ON' => 'Click to display high resolution images',
+'NAVIGATION_HD_OFF' => 'Click to display standard resolution images',
+'NAVIGATION_DICTIONARY' => 'Dictionary',
+'NAVIGATION_DICTIONARY_ALT' => 'Click to open with Wordlink for fast dictionary search',
+
 ################################################################################
 # Top and bottom translation panel
 'ADD_TRANSLATION'       => 'ouzhpenna&ntilde; un droidigezh',
@@ -102,7 +112,7 @@ $LANG = array(
     <h2>Mammenn digor hag aotre&uuml;s</h2>
 
     <p>Fellout a ra din rei&ntilde; ar gwir d\'an dud ranna&ntilde;, implij, sevel ha zoken gounid arc\'hant gant al labour a grouan.
-    An holl bajenno&ugrave;, brastreso&ugrave; hag endalc\'had a zo savet a-drugarez da vezianto&ugrave; frank war GNU/Linux, hag an holl vammenno&ugrave; a zo war al lec\'hienn-ma&ntilde;, el la&ntilde;ser &#39;Mammenno&ugrave;&#39;. 
+    An holl bajenno&ugrave;, brastreso&ugrave; hag endalc\'had a zo savet a-drugarez da vezianto&ugrave; frank war GNU/Linux, hag an holl vammenno&ugrave; a zo war al lec\'hienn-ma&ntilde;, el la&ntilde;ser &#39;Mammenno&ugrave;&#39;.
     Gant ma vo meneget va anv – David Revoy - evel oberour e c\'hallit hardizh ober un implij kenwerzhel, trei&ntilde;, sevel fan-art, moulla&ntilde;, sevel filmo&ugrave;, c\'hoario&ugrave video ha ranna&ntilde; kement ha ma fell deoc\'h.</p>
 
     <div class="button">
@@ -134,7 +144,7 @@ $LANG = array(
         skoazellit ac\'hanon evit produi&ntilde; Pepper&amp;Carrot
       </a>
     </div>
-    
+
     <img alt="skeudenn: greanterezh ar banno&ugrave;-dreset VS skoazell patreon" src="0_sources/0ther/misc/low-res/2015-02-09_philosophy_06-industry-change_by-David-Revoy.jpg">
 
 
@@ -150,12 +160,12 @@ $LANG = array(
 
 'CONTRIBUTE_FANART'	    => '
     <h2>Fan-art</h2>
-    
+
     <p> Digor eo Pepper&amp;Carrot d\'ar fan-art : tresadenno&ugrave;, istorio&ugrave;, kizellerezh, patromo&ugrave; 3D, fan-faltazi. Kasit anezho din  (<a href="mailto:info@davidrevoy.com">info@davidrevoy.com</a> , pe kasit din ur gerig war ar rouedado&ugrave; kevredadel) din da ziskouez ho labour er skeudennaoueg fan-art.
 ',
 'CONTRIBUTE_DERIVATIONS' => '
     <h2> Deverado&ugrave; :</h2>
-    
+
     <p>Gallout a ra Pepper&amp;Carrot beza&ntilde; azasaet er raktreso&ugrave; pe produio&ugrave;, tu zo deoc\'h kroui&ntilde; ho hini pe mont gant unan a zo anezha&ntilde; dija ?</p>
 ',
 
@@ -166,7 +176,7 @@ $LANG = array(
 ',
 
 'CONTRIBUTE_SOCIAL'	    => 'Rouedado&ugrave; kevredadel;',
- 
+
 'CONTRIBUTE_PRESS'	    => '
     <h2>Kazetenno&ugrave;</h2>
 
@@ -250,7 +260,7 @@ $LANG = array(
     <p>Lec\'hienn lusket gant <a href="http://www.pluxml.org" title="PlXml">PluXml</a></p>
 ',
 ################################################################################
-# Eshop 
+# Eshop
 'ESHOP_COMIC'           => 'Comic books and artbooks are on:',
 'ESHOP_SHOP'            => 'Prints, mugs, tee-shirts and more on:',
 ################################################################################

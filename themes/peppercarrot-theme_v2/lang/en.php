@@ -30,6 +30,16 @@ $LANG = array(
 'ESHOP'      => 'eShop',
 'FOLLOW'     => 'Follow Pepper&amp;Carrot on:',
 
+# Top menu website buttons:
+'NAVIGATION_TRANSCRIPT' => 'Transcript',
+'NAVIGATION_TRANSCRIPT_ON' => 'Click to show transcript',
+'NAVIGATION_TRANSCRIPT_OFF' => 'Click to hide transcript',
+'NAVIGATION_HD' => 'HD 2400px',
+'NAVIGATION_HD_ON' => 'Click to display high resolution images',
+'NAVIGATION_HD_OFF' => 'Click to display standard resolution images',
+'NAVIGATION_DICTIONARY' => 'Dictionary',
+'NAVIGATION_DICTIONARY_ALT' => 'Click to open with Wordlink for fast dictionary search',
+
 ################################################################################
 # Top and bottom translation panel
 'ADD_TRANSLATION' => 'add a translation',
@@ -134,7 +144,7 @@ $LANG = array(
         Help me boost Pepper&amp;Carrot production today.
       </a>
     </div>
-    
+
     <img alt="Illustration: comic book industry vs. Patreon support" src="0_sources/0ther/misc/low-res/2015-02-09_philosophy_06-industry-change_by-David-Revoy.jpg">
  ',
 
@@ -248,7 +258,7 @@ $LANG = array(
     <p>Website powered by <a href="http://www.pluxml.org" title="PluXml">PluXml</a></p>
 ',
 ################################################################################
-# Eshop 
+# Eshop
 'ESHOP_COMIC'           => 'Comic books and artbooks are on:',
 'ESHOP_SHOP'            => 'Prints, mugs, tee-shirts and more on:',
 ################################################################################

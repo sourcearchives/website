@@ -30,6 +30,16 @@ $LANG = array(
 'ESHOP'         =>  'Botiga',
 'FOLLOW'        =>  'Seguir Pepper&amp;Carrot sus :',
 
+# Top menu website buttons:
+'NAVIGATION_TRANSCRIPT' => 'Transcript',
+'NAVIGATION_TRANSCRIPT_ON' => 'Click to show transcript',
+'NAVIGATION_TRANSCRIPT_OFF' => 'Click to hide transcript',
+'NAVIGATION_HD' => 'HD 2400px',
+'NAVIGATION_HD_ON' => 'Click to display high resolution images',
+'NAVIGATION_HD_OFF' => 'Click to display standard resolution images',
+'NAVIGATION_DICTIONARY' => 'Dictionary',
+'NAVIGATION_DICTIONARY_ALT' => 'Click to open with Wordlink for fast dictionary search',
+
 ################################################################################
 # Top and bottom translation panel
 'ADD_TRANSLATION'       => 'prepausar una traduccion',
@@ -130,7 +140,7 @@ $LANG = array(
       Cap d’editor, distributor o comercial pòt realizar de cambiaments sus Pepper&amp;Carrot per lo conhar dins una casa del \'mercat\'.
       ...E perque Pepper&amp;Carrot poiriá pas aviar un cambiament e aital inspirar una industria en crisi ? Ensagem !
     </p>
-    
+
     <div class="button">
         <a href="?static12/donate" title="Per solament 1€ per episòdi novèl, venètz mecènas.">
           Per solament 1€ per episòdi novèl, venètz mecènas de Pepper&amp;Carrot.
@@ -252,7 +262,7 @@ $LANG = array(
     <p>Site web propulsat per <a href="http://www.pluxml.org" title="PlXml">PluXml</a></p>
 ',
 ################################################################################
-# Eshop 
+# Eshop
 'ESHOP_COMIC'           => 'Las bendas dessenhadas e artbooks son sus  :',
 'ESHOP_SHOP'            => 'Prints, tassas e camisòt e mai sus :',
 ################################################################################

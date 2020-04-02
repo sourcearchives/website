@@ -30,6 +30,16 @@ $LANG = array(
 'ESHOP'         =>  'Sklep',
 'FOLLOW'        =>  'Podążaj za Pepper&amp;Carrot na:',
 
+# Top menu website buttons:
+'NAVIGATION_TRANSCRIPT' => 'Transcript',
+'NAVIGATION_TRANSCRIPT_ON' => 'Click to show transcript',
+'NAVIGATION_TRANSCRIPT_OFF' => 'Click to hide transcript',
+'NAVIGATION_HD' => 'HD 2400px',
+'NAVIGATION_HD_ON' => 'Click to display high resolution images',
+'NAVIGATION_HD_OFF' => 'Click to display standard resolution images',
+'NAVIGATION_DICTIONARY' => 'Dictionary',
+'NAVIGATION_DICTIONARY_ALT' => 'Click to open with Wordlink for fast dictionary search',
+
 ################################################################################
 # Top and bottom translation panel
 'ADD_TRANSLATION'       => 'dodaj przekład',
@@ -135,7 +145,7 @@ $LANG = array(
         pomóż mi usprawnić produkcję Pepper&amp;Carrot
       </a>
     </div>
-    
+
     <img alt="ilustracja: branża komiksu VS wsparcie patronów" src="0_sources/0ther/misc/low-res/2015-02-09_philosophy_06-industry-change_by-David-Revoy.jpg">
  ',
 
@@ -149,12 +159,12 @@ $LANG = array(
 
 'CONTRIBUTE_FANART'	    => '
     <h2>Twórczość fanów:</h2>
-    
+
     <p>Pepper&amp;Carrot jest otwarty na fanów: rysunki, scenariusze, rzeźby, modele 3D, fanfici. Prześlij mi je, (<a href="mailto:info@davidrevoy.com">info@davidrevoy.com</a>, lub zaczep mnie na portalu społecznościowym) by znalazły się w galerii fan-artów:</p>
 ',
 'CONTRIBUTE_DERIVATIONS' => '
     <h2>Adaptacje:</h2>
-    
+
     <p>Pepper&amp;Carrot umożliwia dowolne tworzenie adaptacji. Może wykonasz własną albo wesprzesz czyjąś?</p>
 ',
 
@@ -165,8 +175,8 @@ $LANG = array(
 ',
 
 'CONTRIBUTE_SOCIAL'	    => 'Sieci społecznosciowe:',
- 
-'CONTRIBUTE_PRESS'	    => '     
+
+'CONTRIBUTE_PRESS'	    => '
     <h2>Prasa:</h2>
 
     <p>Zostań wydawcą Pepper&amp;Carrot! Pisz artykuły, twórz posty, dziel się i buduj grupy na ulubionych portalach społecznościowych. Na stronie źródeł możesz pobrać <a href="?static6/sources" title="Źródła">materiały prasowe</a>.</p>
@@ -249,7 +259,7 @@ $LANG = array(
     <p>Strona napędzana przez <a href="http://www.pluxml.org" title="PlXml">PluXml</a></p>
 ',
 ################################################################################
-# Eshop 
+# Eshop
 'ESHOP_COMIC'           => 'Comic books and artbooks are on:',
 'ESHOP_SHOP'            => 'Prints, mugs, tee-shirts and more on:',
 ################################################################################

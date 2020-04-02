@@ -30,6 +30,16 @@ $LANG = array(
 'ESHOP'      => 'Winkel',
 'FOLLOW'     => 'Volg Pepper&amp;Carrot op:',
 
+# Top menu website buttons:
+'NAVIGATION_TRANSCRIPT' => 'Transcript',
+'NAVIGATION_TRANSCRIPT_ON' => 'Click to show transcript',
+'NAVIGATION_TRANSCRIPT_OFF' => 'Click to hide transcript',
+'NAVIGATION_HD' => 'HD 2400px',
+'NAVIGATION_HD_ON' => 'Click to display high resolution images',
+'NAVIGATION_HD_OFF' => 'Click to display standard resolution images',
+'NAVIGATION_DICTIONARY' => 'Dictionary',
+'NAVIGATION_DICTIONARY_ALT' => 'Click to open with Wordlink for fast dictionary search',
+
 ################################################################################
 # Top and bottom translation panel
 'ADD_TRANSLATION' => 'vertaling toevoegen',
@@ -130,7 +140,7 @@ $LANG = array(
       aan te passen om aan te sluiten bij hun visie op wat &#39;de markt&#39; wil.
       Een enkel succes kan als een &#39;sneeuwbal&#39; de hele industrie veranderen. Laten we het proberen!
     </p>
-    
+
     <div class="button">
       <a href="?static12/donate" title="Voor maar €1 per aflevering kun je patron van Pepper&amp;Carrot worden">
         help me om de productie van Pepper&amp;Carrot sneller te maken
@@ -250,7 +260,7 @@ $LANG = array(
     <p>Website mogelijk gemaakt door <a href="http://www.pluxml.org" title="PluXml">PluXml</a></p>
 ',
 ################################################################################
-# Eshop 
+# Eshop
 'ESHOP_COMIC'           => 'Comic books and artbooks are on:',
 'ESHOP_SHOP'            => 'Prints, mugs, tee-shirts and more on:',
 ################################################################################

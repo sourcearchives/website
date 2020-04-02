@@ -28,6 +28,16 @@ $LANG = array(
 'ESHOP'         => 'eShop',
 'FOLLOW'        =>  "zgana le'e nuzba",
 
+# Top menu website buttons:
+'NAVIGATION_TRANSCRIPT' => 'Transcript',
+'NAVIGATION_TRANSCRIPT_ON' => 'Click to show transcript',
+'NAVIGATION_TRANSCRIPT_OFF' => 'Click to hide transcript',
+'NAVIGATION_HD' => 'HD 2400px',
+'NAVIGATION_HD_ON' => 'Click to display high resolution images',
+'NAVIGATION_HD_OFF' => 'Click to display standard resolution images',
+'NAVIGATION_DICTIONARY' => 'Dictionary',
+'NAVIGATION_DICTIONARY_ALT' => 'Click to open with Wordlink for fast dictionary search',
+
 ################################################################################
 # Top and bottom translation panel
 'ADD_TRANSLATION'       => "fanva lo'e cnino",
@@ -125,7 +135,7 @@ $LANG = array(
         Help me boost Pepper&amp;Carrot production today.
       </a>
     </div>
-    
+
     <img alt="Illustration: comic book industry vs. Patreon support" src="0_sources/0ther/misc/low-res/2015-02-09_philosophy_06-industry-change_by-David-Revoy.jpg">
  ',
 'PHILOSOPHY_CONTENT'    =>  "
@@ -297,7 +307,7 @@ i sa'u do jmina lo notci be ro da poi finti gi'a fanva gi'a cikre vau lo se piln
     <p>i lo dei stuzi cu se cupra la\'o zoi.<a href="http://www.pluxml.org" title="PlXml">PluXml</a>.zoi.</p>
 ',
 ################################################################################
-# Eshop 
+# Eshop
 'ESHOP_COMIC'           => 'Comic books and artbooks are on:',
 'ESHOP_SHOP'            => 'Prints, mugs, tee-shirts and more on:',
 ################################################################################

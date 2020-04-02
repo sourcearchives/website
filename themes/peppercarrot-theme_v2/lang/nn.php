@@ -30,6 +30,16 @@ $LANG = array(
 'ESHOP'      => 'Nettbutikk',
 'FOLLOW'     => 'Følg Pepar &amp; Gulrot på:',
 
+# Top menu website buttons:
+'NAVIGATION_TRANSCRIPT' => 'Transcript',
+'NAVIGATION_TRANSCRIPT_ON' => 'Click to show transcript',
+'NAVIGATION_TRANSCRIPT_OFF' => 'Click to hide transcript',
+'NAVIGATION_HD' => 'HD 2400px',
+'NAVIGATION_HD_ON' => 'Click to display high resolution images',
+'NAVIGATION_HD_OFF' => 'Click to display standard resolution images',
+'NAVIGATION_DICTIONARY' => 'Dictionary',
+'NAVIGATION_DICTIONARY_ALT' => 'Click to open with Wordlink for fast dictionary search',
+
 ################################################################################
 # Top and bottom translation panel
 'ADD_TRANSLATION' => 'lag ei omsetjing',
@@ -248,7 +258,7 @@ $LANG = array(
     <p>Nettstaden køyrer på <a href="http://www.pluxml.org" title="PluXml">PluXml</a>.</p>
 ',
 ################################################################################
-# Eshop 
+# Eshop
 'ESHOP_COMIC'           => 'Bøker med teikneseriar og teikningar:',
 'ESHOP_SHOP'            => 'T-skjorter, krus, kort og andre produkt:',
 ################################################################################
