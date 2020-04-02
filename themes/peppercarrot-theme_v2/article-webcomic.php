@@ -14,13 +14,13 @@ class NavigationToggleButton {
    *
    * @param string  $title       Button title to display to user
    *
-   * @param string  $varname     Variable name to add to URL, format '&varname=on'
+   * @param string  $varname     Variable name to add to URL, format '&varname=1'
    *
    * @param string  $sessionvar  Name of the $_SESSION entry to remember the option
    *
    * @param string  $alton       Link tooltip for toggling on
    *
-   * @param string  $altoff       Link tooltip for toggling off
+   * @param string  $altoff      Link tooltip for toggling off
    *
    * @return void
    */
@@ -47,7 +47,9 @@ class NavigationToggleButton {
   }
 
   /**
-   * Print the Button's HTML code
+   * Print the button's HTML code.
+   *
+   * @return void
    */
   function printHtml() {
     global $plxShow;
@@ -78,12 +80,24 @@ class NavigationToggleButton {
             <div class="responsive-langmenu">
               <!-- Button for opening this page in http://multidict.net/wordlink/ -->
               <div class="button top moka">
-                <a href="https://multidict.net/wordlink/?sl=en&url=<?php print($plxShow->artUrl().urlencode('?&transcript=1')); ?>" title="<?php print($plxShow->Getlang('NAVIGATION_DICTIONARY_ALT')); ?>" class="lang option" target="_blank"><?php print($plxShow->Getlang('NAVIGATION_DICTIONARY')); ?></a>
+                <a href="https://multidict.net/wordlink/?sl=en&url=<?php print($plxShow->artUrl().urlencode('&transcript=1')); ?>" title="<?php print($plxShow->Getlang('NAVIGATION_DICTIONARY_ALT')); ?>" class="lang option" target="_blank"><?php print($plxShow->Getlang('NAVIGATION_DICTIONARY')); ?></a>
               </div>
               <?php
-              $transcriptButton = new NavigationToggleButton($plxShow->Getlang('NAVIGATION_TRANSCRIPT'), 'transcript', 'SessionTranscript', $plxShow->Getlang('NAVIGATION_TRANSCRIPT_ON'), $plxShow->Getlang('NAVIGATION_TRANSCRIPT_OFF'));
+              $transcriptButton = new NavigationToggleButton(
+                $plxShow->Getlang('NAVIGATION_TRANSCRIPT'),
+                'transcript',
+                'SessionTranscript',
+                $plxShow->Getlang('NAVIGATION_TRANSCRIPT_ON'),
+                $plxShow->Getlang('NAVIGATION_TRANSCRIPT_OFF')
+              );
               $transcriptButton->printHtml();
-              $hdButton = new NavigationToggleButton($plxShow->Getlang('NAVIGATION_HD'), 'hd', 'SessionHD', $plxShow->Getlang('NAVIGATION_HD_ON'), $plxShow->Getlang('NAVIGATION_HD_OFF'));
+              $hdButton = new NavigationToggleButton(
+                $plxShow->Getlang('NAVIGATION_HD'),
+                'hd',
+                'SessionHD',
+                $plxShow->Getlang('NAVIGATION_HD_ON'),
+                $plxShow->Getlang('NAVIGATION_HD_OFF')
+              );
               $hdButton->printHtml();
               ?>
               <label for="langmenu" style="display: inline-block;"><span class="translabutton"><img src="themes/peppercarrot-theme_v2/ico/language.svg" alt=""/> <?php echo $langlabel;?><img src="themes/peppercarrot-theme_v2/ico/dropdown.svg" alt=""/></span></label>
