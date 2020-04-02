@@ -32,13 +32,13 @@ $LANG = array(
 
 # Top menu website buttons:
 'NAVIGATION_TRANSCRIPT' => 'Transcription',
-'NAVIGATION_TRANSCRIPT_ON' => 'Click to show transcript',
-'NAVIGATION_TRANSCRIPT_OFF' => 'Click to hide transcript',
+'NAVIGATION_TRANSCRIPT_ON' => 'Afficher la transcription',
+'NAVIGATION_TRANSCRIPT_OFF' => 'Cacher la transcription',
 'NAVIGATION_HD' => 'HD 2400px',
-'NAVIGATION_HD_ON' => 'Click to display high resolution images',
-'NAVIGATION_HD_OFF' => 'Click to display standard resolution images',
+'NAVIGATION_HD_ON' => 'Basculer vers en haute resolution',
+'NAVIGATION_HD_OFF' => 'Basculer vers en resolution standard',
 'NAVIGATION_DICTIONARY' => 'Dictionnaire',
-'NAVIGATION_DICTIONARY_ALT' => 'Click to open with Wordlink for fast dictionary search',
+'NAVIGATION_DICTIONARY_ALT' => 'Cliquer pour ouvrir Wordlink et initier une recherche dans le dictionnaire',
 
 ################################################################################
 # Top and bottom translation panel
