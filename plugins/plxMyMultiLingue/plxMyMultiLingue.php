@@ -855,6 +855,8 @@ public function MyMultiLingueComicDisplay($params) {
   $vignette_name = substr($vignette_parts['filename'], 3);
   ## Keep only last two digit of vignette filename because they are the episode number
   $episode_number = substr($vignette_name, -2);
+  # We need to keep the leading zeroes for the transcripts
+  $episode_number_with_zeroes = $episode_number;
   ## In case of leading leading 0, remove it to beautify (ep01 => ep1)
   $episode_number = ltrim($episode_number, '0');
   ## debug: to test
@@ -889,6 +891,9 @@ public function MyMultiLingueComicDisplay($params) {
     ## debug: to test
     #echo "<b>&#36;pagenumber</b> [" . $comicpage_number . "] <br />";
 
+    # We need to keep the leading zeroes for the transcripts
+    $comicpage_number_with_zeroes = $comicpage_number;
+
     # Managing conditional alt text for <img> html tag
     ## only in case of a normal page
     if ( $comicpage_number != "00" ) {
@@ -918,7 +923,11 @@ public function MyMultiLingueComicDisplay($params) {
       if ($transcript) {
         # Record a token for the next page
         $_SESSION['SessionTranscript'] = 1;
-        echo 'TODO TRANSCRIPT GOES HERE';
+        # Include html file with transcript if available
+        $transcript_filename = $episode_source_directory.'/lang/'.$usedlang.'/E'.$episode_number_with_zeroes.'P'.$comicpage_number_with_zeroes.'.html';
+        if (file_exists($transcript_filename)) {
+          readfile($transcript_filename);
+        }
       }
     }
   }
@@ -930,9 +939,12 @@ public function MyMultiLingueComicDisplay($params) {
 /**
  * Method to display the page 00 (header) separately
  * Main input: the vignette of the article
+ *
+ * @param $transcript  boolean  Whether to include an HTML transcript of the title when available
+ *
  * @author: David Revoy
  **/
-public function MyMultiLingueComicHeader() {
+public function MyMultiLingueComicHeader($transcript) {
 
   $plxMotor = plxMotor::getInstance();
   $plxShow = plxShow::getInstance();
@@ -948,6 +960,8 @@ public function MyMultiLingueComicHeader() {
   $vignette_name = substr($vignette_parts['filename'], 3);
   ## Keep only last two digit of vignette filename because they are the episode number
   $episode_number = substr($vignette_name, -2);
+  # We need to keep the leading zeroes for the transcripts
+  $episode_number_with_zeroes = $episode_number;
   ## In case of leading leading 0, remove it to beautify (ep01 => ep1)
   $episode_number = ltrim($episode_number, '0');
   ## debug: to test
@@ -985,6 +999,16 @@ public function MyMultiLingueComicHeader() {
         <img class="comicpage" src="'.$comicpage_header.'" '.$comicpage_size[3].' alt="'.$comicpage_alt.'">
     </div>
     ';
+
+    if ($transcript) {
+      # Include html file with transcript if available
+      $transcript_filename = $episode_source_directory.'/lang/'.$this->lang.'/E'.$episode_number_with_zeroes.'P00.html';
+      if (file_exists($transcript_filename)) {
+        echo '<div class="panel" align="center">';
+        readfile($transcript_filename);
+        echo '</div>';
+      }
+    }
 }
 
 /********************************/

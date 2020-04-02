@@ -99,7 +99,7 @@ class NavigationToggleButton {
         <div style="clear:both;">
         </div>
 
-        <?php eval($plxShow->callHook('MyMultiLingueComicHeader')) ?>
+        <?php eval($plxShow->callHook('MyMultiLingueComicHeader', $transcriptButton->status())) ?>
 
         <?php
         $buttonthemeA = '';
