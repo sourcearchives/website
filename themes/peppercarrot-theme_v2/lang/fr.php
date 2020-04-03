@@ -35,10 +35,10 @@ $LANG = array(
 'NAVIGATION_TRANSCRIPT_ON' => 'Afficher la transcription',
 'NAVIGATION_TRANSCRIPT_OFF' => 'Cacher la transcription',
 'NAVIGATION_HD' => 'HD 2400px',
-'NAVIGATION_HD_ON' => 'Basculer vers en haute resolution',
-'NAVIGATION_HD_OFF' => 'Basculer vers en resolution standard',
+'NAVIGATION_HD_ON' => 'Basculer vers la haute resolution',
+'NAVIGATION_HD_OFF' => 'Basculer vers la resolution standard',
 'NAVIGATION_DICTIONARY' => 'Dictionnaire',
-'NAVIGATION_DICTIONARY_ALT' => 'Cliquer pour ouvrir Wordlink et initier une recherche dans le dictionnaire',
+'NAVIGATION_DICTIONARY_ALT' => 'Cliquer pour ouvrir dans Wordlink pour une recherche rapide dans le dictionnaire',
 
 ################################################################################
 # Top and bottom translation panel
