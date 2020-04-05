@@ -1013,6 +1013,10 @@ public function MyMultiLingueComicHeader($transcript) {
 				echo '" title="'.$plxShow->Getlang('NAVIGATION_DICTIONARY_ALT').'">'.$plxShow->Getlang('NAVIGATION_DICTIONARY').'</a>';
 			echo '</div>';
 		echo '</div>';
+		} else {
+		echo '<div class="panel notice" align="center">';
+			echo ''.$plxShow->Getlang('NAVIGATION_TRANSCRIPT_UNAVAILABLE').'';
+		echo '</div>';
 		}
 	}
 }
