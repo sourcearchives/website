@@ -1000,15 +1000,21 @@ public function MyMultiLingueComicHeader($transcript) {
     </div>
     ';
 
-    if ($transcript) {
-      # Include html file with transcript if available
-      $transcript_filename = $episode_source_directory.'/hi-res/html/'.$this->lang.'_E'.$episode_number_with_zeroes.'P00.html';
-      if (file_exists($transcript_filename)) {
-        echo '<div class="panel" align="center">';
-        readfile($transcript_filename);
-        echo '</div>';
-      }
-    }
+	if ($transcript) {
+		# Include html file with transcript if available
+		$transcript_filename = $episode_source_directory.'/hi-res/html/'.$this->lang.'_E'.$episode_number_with_zeroes.'P00.html';
+		if (file_exists($transcript_filename)) {
+		echo '<div class="panel" align="center">';
+		readfile($transcript_filename);
+			// Display a button for opening this page in http://multidict.net/wordlink/
+			echo '<div class="button top moka">';
+				echo '<a href="https://multidict.net/wordlink/?sl=en&url=';
+				print($plxShow->artUrl().urlencode('&transcript=1'));
+				echo '" title="'.$plxShow->Getlang('NAVIGATION_DICTIONARY_ALT').'">'.$plxShow->Getlang('NAVIGATION_DICTIONARY').'</a>';
+			echo '</div>';
+		echo '</div>';
+		}
+	}
 }
 
 /********************************/
