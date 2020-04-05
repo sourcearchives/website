@@ -924,7 +924,7 @@ public function MyMultiLingueComicDisplay($params) {
         # Record a token for the next page
         $_SESSION['SessionTranscript'] = 1;
         # Include html file with transcript if available
-        $transcript_filename = $episode_source_directory.'/lang/'.$usedlang.'/E'.$episode_number_with_zeroes.'P'.$comicpage_number_with_zeroes.'.html';
+        $transcript_filename = $episode_source_directory.'/hi-res/html/'.$usedlang.'_E'.$episode_number_with_zeroes.'P'.$comicpage_number_with_zeroes.'.html';
         if (file_exists($transcript_filename)) {
           readfile($transcript_filename);
         }
