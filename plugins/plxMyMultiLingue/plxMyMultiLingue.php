@@ -1002,7 +1002,7 @@ public function MyMultiLingueComicHeader($transcript) {
 
     if ($transcript) {
       # Include html file with transcript if available
-      $transcript_filename = $episode_source_directory.'/lang/'.$this->lang.'/E'.$episode_number_with_zeroes.'P00.html';
+      $transcript_filename = $episode_source_directory.'/hi-res/html/'.$this->lang.'_E'.$episode_number_with_zeroes.'P00.html';
       if (file_exists($transcript_filename)) {
         echo '<div class="panel" align="center">';
         readfile($transcript_filename);
