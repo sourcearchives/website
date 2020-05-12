@@ -360,6 +360,7 @@ class plxMyMultiLingue extends plxPlugin {
     $this->addHook('MyMultiLingueComicToggleButtons', 'MyMultiLingueComicToggleButtons');
     $this->addHook('MyMultiLingueComicDisplay', 'MyMultiLingueComicDisplay');
     $this->addHook('MyMultiLingueComicHeader', 'MyMultiLingueComicHeader');
+    $this->addHook('MyMultiLingueComicCredits', 'MyMultiLingueComicCredits');
     $this->addHook('MyMultiLingueSourceLink', 'MyMultiLingueSourceLink');
     $this->addHook('MyMultiLingueBackgroundColor', 'MyMultiLingueBackgroundColor');
     $this->addHook('MyMultiLingueFramagitLink', 'MyMultiLingueFramagitLink');
@@ -1222,6 +1223,94 @@ class plxMyMultiLingue extends plxPlugin {
         }
       }
     }
+  }
+
+  /**
+   * Print contributors' names + optional links as a description data item
+   * Names + links have the format 'Name <http|mailto ...>'
+   * Links can be omitted for just a name
+   */
+  private function printCredits($translatorinfos) {
+    natcasesort($translatorinfos);
+    $entries = array();
+    foreach ($translatorinfos as $translatorinfo) {
+      preg_match('/(.*)\s+\<((http|mailto).*)\>/', $translatorinfo, $matches);
+      if (count($matches) == 4) {
+        array_push($entries, '<a href="' . $matches[2] . '">'. filter_var($matches[1], FILTER_SANITIZE_STRING) .'</a>');
+      } else {
+        array_push($entries, filter_var($translatorinfo, FILTER_SANITIZE_STRING));
+      }
+    }
+    echo '<dd style="margin-left:1em; margin-right:1em">';
+    echo implode('&nbsp;• ', $entries);
+    echo '</dd>';
+  }
+
+  /********************************/
+  /* Display credits on comicpage */
+  /********************************/
+  /**
+   * Method to display the credits of an episode
+   * Main input: episodeData() and info.json files
+   * @author: GunChleoc
+   **/
+  public function MyMultiLingueComicCredits() {
+    $episodedata = $this->episodeData();
+
+    $episodeinfos = json_decode(file_get_contents($episodedata['directory'].'/info.json'), true);
+
+    # Translator credits
+    $usedLang = $this->lang;
+    if (!file_exists($episodedata['directory'].'/lang/'.$this->lang)) {
+      $usedLang = 'en';
+    }
+    $translatorinfos = json_decode(file_get_contents($episodedata['directory'].'/lang/'.$this->lang.'/info.json'), true);
+
+    # We have editing credits both in the episode and in the translator info, so we merge them
+    if (isset($translatorinfos['credits']['editing'])) {
+      if (isset($episodeinfos['credits']['editing'])) {
+        $episodeinfos['credits']['editing'] = array_merge(episodeinfos['credits']['editing'], $translatorinfos['credits']['editing']);
+      } else {
+        $episodeinfos['credits']['editing'] = $translatorinfos['credits']['editing'];
+      }
+    }
+
+    echo '<h1>Credits</h1>';
+    echo '<dl>';
+
+    foreach ($episodeinfos['credits'] as $category => $names) {
+      echo '<dt>'.ucwords(str_replace('-', ' ', $category)).'</dt> ';
+      $this->printCredits($names);
+    }
+
+    # Translator/original text info
+    if (isset($translatorinfos['credits']['translation'])) {
+      if ($usedLang == $episodeinfos['original-language']) {
+        echo '<dt>Text</dt> ';
+      } else {
+        $originalinfos = json_decode(file_get_contents($episodedata['directory'].'/lang/en/info.json'), true);
+        if (isset($originalinfos['credits']['translation'])) {
+          echo '<dt>Original Text</dt> ';
+          $this->printCredits($originalinfos['credits']['translation']);
+        }
+        echo '<dt>Translation</dt> ';
+      }
+      $this->printCredits($translatorinfos['credits']['translation']);
+    }
+    if (isset($translatorinfos['credits']['proofreading'])) {
+      echo '<dt>Proofreading</dt> ';
+      $this->printCredits($translatorinfos['credits']['proofreading']);
+    }
+
+    # Software
+    echo '<dt>Software</dt> ';
+    $softwarelist = array();
+    foreach ($episodeinfos['software'] as $software) {
+      array_push($softwarelist, $software['name'].' '.$software['version']);
+    }
+    $this->printCredits($softwarelist);
+
+    echo '</dl>';
   }
 
 

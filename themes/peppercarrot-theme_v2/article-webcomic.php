@@ -40,6 +40,11 @@ include(dirname(__FILE__) . '/header.php');
           <?php eval($plxShow->callHook('MyMultiLingueComicDisplay')) ?>
         </section>
 
+        <div class="content">
+          <section class="col sml-12 med-12 lrg-11 text-left sml-centered">
+            <?php eval($plxShow->callHook('MyMultiLingueComicCredits')) ?>
+          </section>
+        </div>
       </article>
 
       <?php
