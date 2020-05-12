@@ -1264,7 +1264,7 @@ class plxMyMultiLingue extends plxPlugin {
     if (!file_exists($episodedata['directory'].'/lang/'.$this->lang)) {
       $usedLang = 'en';
     }
-    $translatorinfos = json_decode(file_get_contents($episodedata['directory'].'/lang/'.$this->lang.'/info.json'), true);
+    $translatorinfos = json_decode(file_get_contents($episodedata['directory'].'/lang/'.$usedLang.'/info.json'), true);
 
     # We have editing credits both in the episode and in the translator info, so we merge them
     if (isset($translatorinfos['credits']['editing'])) {
